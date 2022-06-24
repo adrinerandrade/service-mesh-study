@@ -10,11 +10,15 @@ SO: Linux/Windows WSL
 
 Install k3d, a lightweight cluster for development on Kubernetes.
 
-`curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash`
+```sh
+curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+```
 
 #### Create a cluster
 
-`k3d cluster create -p "8000:30000@loadbalancer" --agents 2`
+```sh
+k3d cluster create -p "8000:30000@loadbalancer" --agents 2
+```
 
 #### Install Istioctl
 
@@ -22,11 +26,15 @@ To manage istio inside your k8s (See [Documentation](https://istio.io/latest/doc
 
 #### Install Istio
 
-`istioctl install`
+```sh
+istioctl install
+```
 
 #### Inject sidecar proxy
 
-`kubectl label namespace default istio-injection=enabled`
+```sh
+kubectl label namespace default istio-injection=enabled
+```
 
 Now your default namespace in k8s is ready to use Istio.
 
